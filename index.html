@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daniel Kotu | Personal Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#0b0f19;
+    color:white;
+    line-height:1.6;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(11,15,25,.97);
+    padding:17px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    border-bottom:1px solid #273149;
+}
+
+.logo{
+    color:#00e5ff;
+    font-size:23px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    gap:18px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#00e5ff;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px 50px;
+    background:radial-gradient(circle at top,#17243d,#0b0f19 60%);
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.avatar{
+    width:130px;
+    height:130px;
+    margin:0 auto 25px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#00e5ff,#0066ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:38px;
+    font-weight:bold;
+    box-shadow:0 0 35px rgba(0,229,255,.3);
+}
+
+.hero h1{
+    font-size:43px;
+    margin-bottom:10px;
+}
+
+.hero h1 span{
+    color:#00e5ff;
+}
+
+.hero h2{
+    color:#b8c0d0;
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#9da7bb;
+    max-width:620px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    margin:5px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.primary{
+    background:#00e5ff;
+    color:#071018;
+}
+
+.secondary{
+    border:1px solid #00e5ff;
+    color:#00e5ff;
+}
+
+section{
+    padding:90px 7%;
+}
+
+.about,.projects{
+    background:#0f1420;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    color:#00e5ff;
+    font-size:32px;
+}
+
+.section-title p{
+    color:#8993a8;
+}
+
+.about-box{
+    max-width:850px;
+    margin:auto;
+    padding:30px;
+    background:#151c2b;
+    border:1px solid #273149;
+    border-radius:15px;
+}
+
+.about-box p{
+    color:#b9c1d1;
+    margin-bottom:15px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#151c2b;
+    border:1px solid #273149;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.card:hover{
+    border-color:#00e5ff;
+    transform:translateY(-5px);
+}
+
+.card .icon{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:white;
+}
+
+.card p{
+    color:#929caf;
+    font-size:14px;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-item{
+    background:#151c2b;
+    border:1px solid #273149;
+    padding:17px;
+    margin:12px 0;
+    border-radius:12px;
+}
+
+.contact-item span{
+    color:#00e5ff;
+    font-weight:bold;
+}
+
+.contact-item a{
+    text-decoration:none;
+}
+
+.social{
+    margin-top:25px;
+}
+
+.social a{
+    display:inline-block;
+    margin:6px;
+    padding:10px 17px;
+    border:1px solid #273149;
+    border-radius:25px;
+    color:white;
+    text-decoration:none;
+}
+
+.social a:hover{
+    color:#00e5ff;
+    border-color:#00e5ff;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#070a11;
+    color:#707a8d;
+    border-top:1px solid #20283a;
+}
+
+@media(max-width:750px){
+
+    nav{
+        padding:15px 4%;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    nav ul{
+        gap:9px;
+    }
+
+    nav ul li a{
+        font-size:11px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero h2{
+        font-size:17px;
+    }
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">DANIEL KOTU</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="avatar">DK</div>
+
+<h1>Hello, I'm <span>Daniel Kotu</span></h1>
+
+<h2>Hardware & Networking Service Student</h2>
+
+<p>
+Welcome to my personal website. I am interested in computers,
+networking, technology and web development.
+</p>
+
+<div class="buttons">
+
+<a href="#about" class="btn primary">About Me</a>
+
+<a href="#contact" class="btn secondary">Contact Me</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="about" id="about">
+
+<div class="section-title">
+
+<h2>About Me</h2>
+
+<p>Get to know me</p>
+
+</div>
+
+<div class="about-box">
+
+<p>
+Hello! My name is <strong>Daniel Kotu</strong>.
+I am a student studying <strong>Hardware and Networking Service</strong>.
+</p>
+
+<p>
+I am interested in computer hardware, networking, technology and web development.
+I enjoy learning new technical skills and improving my knowledge.
+</p>
+
+<p>
+My goal is to develop strong technical skills and build useful projects using technology.
+</p>
+
+</div>
+
+</section>
+
+
+<section id="skills">
+
+<div class="section-title">
+
+<h2>My Skills</h2>
+
+<p>My technical interests and skills</p>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Computer Hardware</h3>
+<p>Understanding computer components, installation and basic troubleshooting.</p>
+</div>
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Networking</h3>
+<p>Basic networking concepts, network devices and troubleshooting.</p>
+</div>
+
+<div class="card">
+<div class="icon">🔧</div>
+<h3>Troubleshooting</h3>
+<p>Finding and solving basic computer hardware problems.</p>
+</div>
+
+<div class="card">
+<div class="icon">🌍</div>
+<h3>Web Development</h3>
+<p>HTML, CSS and basic website development.</p>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Technology</h3>
+<p>Interested in learning new technologies and digital tools.</p>
+</div>
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>Continuous Learning</h3>
+<p>Always learning new skills and improving my technical knowledge.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="projects" id="projects">
+
+<div class="section-title">
+
+<h2>My Projects</h2>
+
+<p>Projects and learning activities</p>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Personal Website</h3>
+<p>My personal website created using HTML and CSS.</p>
+</div>
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Computer Hardware Project</h3>
+<p>A project about computer hardware, components and troubleshooting.</p>
+</div>
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Networking Project</h3>
+<p>A learning project related to computer networking.</p>
+</div>
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>School Projects</h3>
+<p>Academic projects and technical learning activities.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<div class="section-title">
+
+<h2>Contact Me</h2>
+
+<p>Let's connect with me</p>
+
+</div>
+
+<div class="contact-box">
+
+<div class="contact-item">
+
+📧 Email:
+
+<a href="mailto:danikotu636@gmail.com">
+
+<span>danikotu636@gmail.com</span>
+
+</a>
+
+</div>
+
+
+<div class="contact-item">
+
+📱 Phone:
+
+<a href="tel:0952048397">
+
+<span>0952048397</span>
+
+</a>
+
+</div>
+
+
+<div class="contact-item">
+
+📍 Location:
+
+<span>Addis Ababa, Ethiopia</span>
+
+</div>
+
+
+<div class="social">
+
+<a href="https://instagram.com/zmta.16" target="_blank">
+📸 Instagram
+</a>
+
+<a href="https://t.me/Txdod" target="_blank">
+✈️ Telegram
+</a>
+
+<a href="https://www.tiktok.com/@zmta16" target="_blank">
+🎵 TikTok
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Daniel Kotu. All Rights Reserved.</p>
+
+<p>Made with ❤️ using HTML & CSS</p>
+
+</footer>
+
+</body>
+  </html>
